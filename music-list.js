@@ -1,4 +1,4 @@
-let allMusic = [
+const musics = [
   {
     name: "Fearless",
     artist: "Taylor Swift",

@@ -12,7 +12,7 @@ const container = document.querySelector(".container"),
   moreMusicBtn = container.querySelector("#more-music"),
   closemoreMusic = container.querySelector("#close");
 
-let musicIndex = Math.floor(Math.random() * allMusic.length + 1);
+let musicIndex = Math.floor(Math.random() * musics.length + 1);
 
 window.addEventListener("load", () => {
   loadMusic(musicIndex);
@@ -22,10 +22,11 @@ window.addEventListener("load", () => {
 // load music function
 
 function loadMusic(indexNumb) {
-  musicName.innerText = allMusic[indexNumb - 1].name;
-  musicArtist.innerText = allMusic[indexNumb - 1].artist;
-  musicImg.src = `images/${allMusic[indexNumb - 1].img}.jpg`;
-  mainAudio.src = `songs/${allMusic[indexNumb - 1].src}.mp3`;
+  console.log(musics[indexNumb - 1])
+  musicName.innerText = musics[indexNumb - 1].name;
+  musicArtist.innerText = musics[indexNumb - 1].artist;
+  musicImg.src = `images/${musics[indexNumb - 1].img}.jpg`;
+  mainAudio.src = `audio/${musics[indexNumb - 1].src}.mp3`;
 }
 
 // play music function
@@ -46,7 +47,7 @@ function pauseMusic() {
 function nextMusic() {
   musicIndex++; //increment of musicIndex by 1
   // if musicIndex is greater than array length then musicIndex will be 1 so the first music play
-  musicIndex > allMusic.length ? (musicIndex = 1) : (musicIndex = musicIndex);
+  musicIndex > musics.length ? (musicIndex = 1) : (musicIndex = musicIndex);
   loadMusic(musicIndex);
   playMusic();
   playingSong();
@@ -55,7 +56,7 @@ function nextMusic() {
 function prevMusic() {
   musicIndex--; //increment of musicIndex by 1
   // if musicIndex is less than array length then musicIndex will be 1 so the first music play
-  musicIndex < 1 ? (musicIndex = allMusic.length) : (musicIndex = musicIndex);
+  musicIndex < 1 ? (musicIndex = musics.length) : (musicIndex = musicIndex);
   loadMusic(musicIndex);
   playMusic();
   playingSong();
@@ -155,9 +156,9 @@ mainAudio.addEventListener("ended", () => {
       playMusic(); //calling playMusic Function
       break;
     case "shuffle":
-      let randIndex = Math.floor(Math.random() * allMusic.length + 1);
+      let randIndex = Math.floor(Math.random() * musics.length + 1);
       do {
-        randIndex = Math.floor(Math.random() * allMusic.length + 1);
+        randIndex = Math.floor(Math.random() * musics.length + 1);
       } while (musicIndex == randIndex); //thi loop run until the next random number won't be the same of current musicIndex
       musicIndex = randIndex; //passing randomIndex to musicIndex
       loadMusic(musicIndex);
@@ -179,21 +180,21 @@ const ulTag = container.querySelector("ul");
 
 // let create li tags according to array lenght for list
 
-for (let i = 0; i < allMusic.length; i++) {
+for (let i = 0; i < musics.length; i++) {
   let liTag = `<li li-index="${i + 1}">
     <div class="row">
-      <span>${allMusic[i].name}</span>
-      <p>${allMusic[i].artist}</p>
+      <span>${musics[i].name}</span>
+      <p>${musics[i].artist}</p>
     </div>
-    <audio class="${allMusic[i].src} " src="songs/${
-    allMusic[i].src
+    <audio class="${musics[i].src} " src="audio/${
+    musics[i].src
   }.mp3"></audio>
-    <span id="${allMusic[i].src}" class="audio-duration">1:45</span>
+    <span id="${musics[i].src}" class="audio-duration">1:45</span>
   </li>`;
   ulTag.insertAdjacentHTML("beforeend", liTag);
 
-  let liAudioDurationTag = ulTag.querySelector(`#${allMusic[i].src}`);
-  let liAudioTag = ulTag.querySelector(`.${allMusic[i].src}`);
+  let liAudioDurationTag = ulTag.querySelector(`#${musics[i].src}`);
+  let liAudioTag = ulTag.querySelector(`.${musics[i].src}`);
 
   liAudioTag.addEventListener("loadeddata", () => {
     let duration = liAudioTag.duration;
