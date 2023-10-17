@@ -82,6 +82,15 @@ prevBtn.addEventListener("click", () => {
   prevMusic();
 });
 
+// Event listener for clicking on the progress bar to seek
+progressArea.addEventListener("click", (e) => {
+  const progressWidth = progressArea.clientWidth;
+  const clickX = e.offsetX;
+  const duration = mainAudio.duration;
+  const seekTime = (clickX / progressWidth) * duration;
+  mainAudio.currentTime = seekTime;
+});
+
 // Update progress bar width based on current time of the song
 mainAudio.addEventListener("timeupdate", (e) => {
   const currentTime = e.target.currentTime;
@@ -222,4 +231,3 @@ function clicked(element) {
   playMusic();
   playingSong();
 }
-
