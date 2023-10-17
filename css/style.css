@@ -14,16 +14,14 @@
   margin: 0;
 }
 
-/* Style the overall body with background color and center content */
 body {
   display: flex;
   align-items: center;
   justify-content: center;
   min-height: 100vh;
-  background: rgb(253, 212, 218)
+  background: rgb(253, 212, 218);
 }
 
-/* Style the container that holds the music player */
 .container {
   width: 350px;
   height: 650px;
@@ -36,12 +34,10 @@ body {
   background-blend-mode: screen;
 }
 
-/* Style the icons within the container */
 .container i {
   cursor: pointer;
 }
 
-/* Style various sections with flex display and alignment */
 .top-bar,
 .progress-area .song-timer,
 .controls,
@@ -52,26 +48,22 @@ body {
   justify-content: space-between;
 }
 
-/* Style the icons in the top bar */
 .top-bar i {
   font-size: 30px;
   color: #ffffff;
 }
 
-/* Style the first icon in the top bar */
 .top-bar i:first-child {
   margin-left: -7px;
   font-size: 22px;
 }
 
-/* Style the text in the top bar */
 .top-bar span {
   font-size: 18px;
   margin-left: -3px;
   color: #ffffff;
 }
 
-/* Style the image area */
 .img-area {
   width: 100%;
   height: 280px;
@@ -79,40 +71,35 @@ body {
   margin-top: 25px;
   border-radius: 50%;
   border-radius: 50%;
-  box-shadow: 0 0 0 5px #ffffff, 0 0 2px #fff, 13px 13px 20px #31313163, -10px -10px 20px #e6f6ff;
+  box-shadow: 0 0 0 5px #ffffff, 0 0 2px #fff, 13px 13px 20px #31313163,
+    -10px -10px 20px #e6f6ff;
 }
 
-/* Style the image within the image area */
 .img-area img {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
 
-/* Style the song details section */
 .song-details {
   text-align: center;
   margin: 30px 0;
 }
 
-/* Style the paragraphs within the song details */
 .song-details p {
   color: #ffffff;
 }
 
-/* Style the song name */
 .song-details .name {
   font-size: 21px;
 }
 
-/* Style the artist name */
 .song-details .artist {
   font-size: 15px;
   opacity: 0.9;
   line-height: 35px;
 }
 
-/* Style the progress area */
 .progress-area {
   height: 6px;
   width: 100%;
@@ -121,7 +108,6 @@ body {
   cursor: pointer;
 }
 
-/* Style the progress bar within the progress area */
 .progress-area .progress-bar {
   height: inherit;
   width: 0%;
@@ -130,7 +116,6 @@ body {
   background: #ffffff;
 }
 
-/* Style a circular indicator for the progress bar */
 .progress-bar::before {
   content: "";
   position: absolute;
@@ -147,29 +132,24 @@ body {
   transition: opacity 0.2s ease;
 }
 
-/* Show the circular indicator on hover */
 .progress-area:hover .progress-bar::before {
   opacity: 1;
   pointer-events: auto;
 }
 
-/* Style the song timer */
 .progress-area .song-timer {
   margin-top: 2px;
 }
 
-/* Style the time indicator within the song timer */
 .song-timer span {
   font-size: 13px;
   color: #ffffff;
 }
 
-/* Style the music player controls */
 .controls {
   margin: 70px 0 5px 0;
 }
 
-/* Style the icons within the controls */
 .controls i {
   font-size: 28px;
   user-select: none;
@@ -179,13 +159,11 @@ body {
   -webkit-text-fill-color: transparent;
 }
 
-/* Style specific icons within the controls */
 .controls i:nth-child(2),
 .controls i:nth-child(4) {
   font-size: 43px;
 }
 
-/* Style the previous and next icons within the controls */
 .controls #prev {
   margin-right: -13px;
 }
@@ -194,7 +172,6 @@ body {
   margin-left: -13px;
 }
 
-/* Style the 'play' and 'pause' button */
 .controls i.prev {
   font-size: 24px;
   padding: 10px;
@@ -205,7 +182,6 @@ body {
   padding: 10px;
 }
 
-/* Style the play/pause button container */
 .controls .play-pause {
   height: 54px;
   width: 54px;
@@ -217,7 +193,6 @@ body {
   box-shadow: 0 0 2px #fff, 8px 8px 15px #ff5e66, -3px -3px 15px #f0ecec;
 }
 
-/* Style the border around the play/pause button */
 .play-pause::before {
   position: absolute;
   content: "";
@@ -228,7 +203,6 @@ body {
   border: 3px solid #ffffff;
 }
 
-/* Style the play/pause icon within the button */
 .play-pause i {
   height: 43px;
   width: 43px;
@@ -241,14 +215,12 @@ body {
   position: absolute;
 }
 
-/* Style the previous and next icons */
 .prev,
 .next {
   box-shadow: 0 0 2px #fff, 8px 8px 15px #ff5e66, -3px -3px 15px #f0ecec;
   border-radius: 50%;
 }
 
-/* Style the music list container */
 .music-list {
   position: absolute;
   width: 100%;
@@ -267,21 +239,18 @@ body {
   transition: all 0.15s ease-in-out;
 }
 
-/* Show the music list when it's active */
 .music-list.show {
   bottom: 0;
   opacity: 1;
   pointer-events: auto;
 }
 
-/* Style the unordered list within the music list */
 .music-list ul {
   margin: 10px 0;
   max-height: 260px;
   overflow: auto;
 }
 
-/* Style each list item in the music list */
 .music-list ul li {
   list-style: none;
   display: flex;
@@ -292,27 +261,22 @@ body {
   border-bottom: 1px solid #e5e5e5;
 }
 
-/* Remove the border from the last list item */
 .music-list ul li:last-child {
   border-bottom: 0px;
 }
 
-/* Style the row elements within list items */
 .music-list ul li .row span {
   font-size: 17px;
 }
 
-/* Style the additional information within list items */
 .music-list ul li .row p {
   opacity: 0.6;
 }
 
-/* Style the audio duration within list items */
 ul li .audio-duration {
   font-size: 16px;
 }
 
-/* Style the header row within the music list */
 .header .row {
   display: flex;
   align-items: center;
@@ -320,33 +284,27 @@ ul li .audio-duration {
   color: #515c6f;
 }
 
-/* Style the icons within the header row */
 .header .row i {
   cursor: default;
 }
 
-/* Style the text within the header row */
 .header .row span {
   margin-left: 5px;
 }
 
-/* Style the close icon within the header */
 .header #close {
   font-size: 22px;
   color: #515c6f;
 }
 
-/* Remove the scrollbar within the music list (only applies to WebKit browsers) */
 .music-list ul::-webkit-scrollbar {
   width: 0;
 }
 
-/* Highlight list items on hover */
 .music-list ul li:hover {
   color: #0e9fff;
 }
 
-/* Apply styles to the currently playing item */
 ul li.playing {
   pointer-events: none;
   color: #0e9fff;

@@ -1,80 +1,86 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <!-- Set character encoding and viewport -->
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    
-    <!-- Set the page title -->
     <title>Music Player</title>
-    
+
     <!-- Link the main stylesheet -->
     <link rel="stylesheet" href="./css/style.css" />
-    
-    <!-- Define the shortcut icon for the page -->
-    <link rel="shortcut icon" href="https://cdn-icons-png.flaticon.com/512/5018/5018543.png" type="image/x-icon">
-    
+
+    <link
+      rel="shortcut icon"
+      href="https://cdn-icons-png.flaticon.com/512/5018/5018543.png"
+      type="image/x-icon"
+    />
+
     <!-- Link the Material Icons font -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+    />
   </head>
   <body>
     <div class="container">
-      <!-- Top bar with favorite icon, "Now Playing" text, and add icon -->
       <div class="top-bar">
-        <i class="material-icons">favorite_border</i> <!-- Favorite icon -->
-        <span>Now Playing</span> <!-- "Now Playing" text -->
-        <i class="material-icons">add</i> <!-- Add icon -->
+        <i class="material-icons">favorite_border</i>
+        <span>Now Playing</span>
+        <i class="material-icons">add</i>
       </div>
-      
+
       <!-- Image area displaying the album cover -->
       <div class="img-area">
         <img src="./images/music-1.jpg" alt="fearless" />
       </div>
-      
+
       <!-- Details about the currently playing song -->
       <div class="song-details">
-        <p class="name">Fearless</p> <!-- Song name -->
-        <p class="artist">Taylor Swift</p> <!-- Artist name -->
+        <p class="name">Fearless</p>
+        <!-- Song name -->
+        <p class="artist">Taylor Swift</p>
+        <!-- Artist name -->
       </div>
 
       <!-- Progress area with audio player for the song -->
       <div class="progress-area">
         <div class="progress-bar">
-          <audio id="main-audio" src="./audio/music-1.mp3"> <!-- Audio player for the song "Fearless" -->
-            Fearless
-          </audio>
+          <audio id="main-audio" src="./audio/music-1.mp3">Fearless</audio>
         </div>
         <div class="song-timer">
-          <span class="current-time">0:00</span> <!-- Current time of the song -->
-          <span class="max-duration">0:00</span> <!-- Maximum duration of the song -->
+          <span class="current-time">0:00</span>
+          <!-- Current time of the song -->
+          <span class="max-duration">0:00</span>
+          <!-- Maximum duration of the song -->
         </div>
         <audio id="main-audio" src=""></audio>
       </div>
 
       <!-- Control buttons for the music player -->
       <div class="controls">
-        <i id="repeat-plist" class="material-icons" title="Playlist looped">repeat</i> <!-- Repeat icon for playlist -->
-        <i id="prev" class="material-icons prev">fast_rewind</i> <!-- Previous track icon -->
+        <i id="repeat-plist" class="material-icons" title="Playlist looped"
+          >repeat</i
+        >
+        <i id="prev" class="material-icons prev">fast_rewind</i>
         <div class="play-pause">
-          <i class="material-icons play">play_arrow</i> <!-- Play icon -->
+          <i class="material-icons play">play_arrow</i>
         </div>
-        <i id="next" class="material-icons next">fast_forward</i> <!-- Next track icon -->
-        <i id="more-music" class="material-icons">queue_music</i> <!-- Queue music icon -->
+        <i id="next" class="material-icons next">fast_forward</i>
+        <i id="more-music" class="material-icons">queue_music</i>
       </div>
 
       <!-- Music list container for displaying available songs -->
       <div class="music-list">
         <div class="header">
           <div class="row">
-            <i class="list material-icons">queue_music</i> <!-- Queue music icon -->
-            <span>Music List</span> <!-- Text indicating the music list -->
+            <i class="list material-icons">queue_music</i>
+            <span>Music List</span>
           </div>
-          <i id="close" class="material-icons">close</i> <!-- Close icon to hide the music list -->
+          <i id="close" class="material-icons">close</i>
         </div>
-        <ul></ul> <!-- Unordered list for displaying songs -->
+        <ul></ul>
       </div>
     </div>
-    
+
     <!-- Include JavaScript files for functionality -->
     <script src="./js/music-list.js"></script>
     <script src="./js/script.js"></script>
